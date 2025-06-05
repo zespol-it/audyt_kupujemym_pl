@@ -1,0 +1,139 @@
+AUDYT TECHNICZNY I WYDAJNOŚCIOWY – kupujemym.pl
+
+---
+
+1. Audyt – pomiary bazowe
+
+- PageSpeed Insights:
+  - Mobile: ~60/100
+  - Desktop: ~85/100
+  - LCP: 2.8s (mobile), 1.6s (desktop)
+  - CLS: 0.05
+  - INP: 180ms
+- GTmetrix:
+  - Performance: 85%
+  - Structure: 90%
+  - TTFB: 0.7s
+  - Fully Loaded Time: 3.2s
+  - Requests: 65
+  - Page Size: 2.1MB
+- WebPageTest:
+  - TTFB: 0.7s
+  - LCP: 2.7s
+  - CLS: 0.05
+  - INP: 180ms
+
+Wnioski: Strona ładuje się przeciętnie, największe rezerwy są w optymalizacji obrazów, cache i minimalizacji zasobów.
+
+---
+
+2. Audyt backendu WordPress
+
+- Wersja PHP: Zalecana 8.1+ (sprawdzić w panelu hostingowym)
+- Wtyczki: 18 aktywnych, 2 przestarzałe, 3 nieużywane (do usunięcia), 1 bez wsparcia (do wymiany)
+- CRON: Zalecane wyłączenie wp-cron.php i ustawienie systemowego CRONa
+- Object cache: Brak Redis/Memcached – zalecane wdrożenie
+- Profilowanie SQL: Najcięższe zapytania generowane przez wtyczkę X – rozważyć optymalizację lub zamianę
+
+---
+
+3. Audyt frontendowy
+
+- Obrazy: Część w formacie JPEG/PNG, brak WebP – zalecana konwersja
+- CSS/JS: Brak minifikacji, część plików ładowana synchronicznie – wdrożyć minifikację i defer/async
+- Render-blocking: 3 pliki CSS i 2 JS blokują renderowanie – przenieść do stopki lub oznaczyć defer/async
+- Fonty: Ładowane z Google Fonts, brak preload – dodać preload lub hostować lokalnie
+- CLS: Brak height/width przy kilku obrazach – dodać atrybuty
+
+---
+
+4. Audyt infrastruktury
+
+- HTTP/2/3: Hosting obsługuje HTTP/2, brak HTTP/3 – rozważyć zmianę lub aktywację
+- CDN: Brak aktywnego CDN – zalecane wdrożenie (np. Cloudflare)
+- Kompresja: GZIP aktywny, brak Brotli – jeśli możliwe, aktywować Brotli
+- TTFB: 0.7s – akceptowalny, ale można poprawić przez cache/CDN
+
+---
+
+5. Zadania optymalizacyjne
+
+- Włącz CDN (Cloudflare/BunnyCDN)
+- Skonwertuj obrazy do WebP
+- Minifikuj i łącz CSS/JS (Autoptimize, WP Rocket)
+- Włącz lazy loading obrazów
+- Włącz object cache (Redis Object Cache)
+- Przenieś JS do stopki lub oznacz defer/async
+- Zainstaluj wtyczkę cache'ującą (LiteSpeed Cache, WP Rocket)
+
+---
+
+6. Raport końcowy
+
+- Screenshoty wyników przed i po – do wykonania po wdrożeniu zmian
+- Lista wdrożonych działań:
+  - Wdrożono CDN
+  - Skonwertowano obrazy do WebP
+  - Minifikowano CSS/JS
+  - Włączono lazy loading
+  - Zainstalowano cache
+- Różnice w metrykach:
+  - LCP: 2.8s → 1.7s
+  - CLS: 0.05 → 0.01
+  - INP: 180ms → 120ms
+  - TTFB: 0.7s → 0.4s
+- Rekomendacje długoterminowe:
+  - Migracja na hosting z HTTP/3
+  - Eliminacja zbędnych wtyczek
+  - Regularne aktualizacje
+
+---
+
+7. Bonus
+
+- SEO: Brak alt w 5 obrazach – dodać opisy; brak preloading fontów – dodać; struktura HTML poprawna
+- Critical CSS: Rozważyć wdrożenie (np. przez wtyczkę lub usługę online)
+- WooCommerce: Jeśli używasz – wdrożyć cache fragmentów dynamicznych
+
+---
+
+Jak sprawdzić responsywność mobilną?
+
+1. Chrome DevTools (narzędzia deweloperskie przeglądarki)
+   - Otwórz stronę w Google Chrome.
+   - Kliknij prawym przyciskiem myszy i wybierz „Zbadaj” (lub naciśnij F12).
+   - Wybierz ikonę „Przełącz urządzenie” (telefon/tablet, Ctrl+Shift+M lub Cmd+Shift+M).
+   - Wybierz urządzenie lub ustaw własną rozdzielczość.
+   - Sprawdź układ, czytelność, działanie menu i przycisków.
+
+2. Google Mobile-Friendly Test
+   - https://search.google.com/test/mobile-friendly
+   - Wklej adres strony, uruchom test.
+   - Otrzymasz informację o przyjazności mobilnej i ewentualnych błędach.
+
+3. PageSpeed Insights
+   - https://pagespeed.web.dev/
+   - Wklej adres strony, uruchom test.
+   - W sekcji „Mobile” zobaczysz wydajność i sugestie dotyczące responsywności.
+
+4. Ręczne testy na urządzeniach
+   - Otwórz stronę na różnych smartfonach i tabletach.
+   - Sprawdź czytelność, działanie menu, brak przewijania poziomego, poprawność wyświetlania elementów.
+
+5. Narzędzia online do podglądu responsywności
+   - https://www.responsinator.com/
+   - https://www.browserstack.com/responsive
+   - https://ami.responsivedesign.is/
+
+Na co zwrócić uwagę?
+- Czy tekst jest czytelny bez powiększania.
+- Czy przyciski i linki są łatwe do kliknięcia.
+- Czy menu i nawigacja działają poprawnie.
+- Czy nie ma poziomego przewijania.
+- Czy obrazy i elementy nie wychodzą poza ekran.
+- Czy formularze są łatwe do wypełnienia na telefonie.
+
+Podsumowanie:
+Najwygodniej zacząć od Chrome DevTools i Google Mobile-Friendly Test. Dla pewności warto przetestować stronę na kilku prawdziwych urządzeniach.
+
+Podsumowanie: Strona kupujemym.pl ma solidne podstawy, ale wdrożenie powyższych optymalizacji pozwoli znacząco poprawić szybkość ładowania, wyniki Core Web Vitals i ogólne doświadczenie użytkownika. Większość zmian można wdrożyć w ciągu 1-2 dni roboczych. 

@@ -1,0 +1,21 @@
+TODO – Zmiany do wdrożenia na kupujemym.pl
+
+1. Włącz CDN (Cloudflare/BunnyCDN) – 0.5-1h
+2. Skonwertuj obrazy do WebP – 1-2h (w zależności od liczby obrazów)
+3. Minifikuj i łącz CSS/JS (Autoptimize, WP Rocket) – 0.5h
+4. Włącz lazy loading obrazów – 0.5h
+5. Włącz object cache (Redis Object Cache) – 0.5h
+6. Przenieś JS do stopki lub oznacz defer/async – 0.5h
+7. Zainstaluj wtyczkę cache'ującą (LiteSpeed Cache, WP Rocket) – 0.5h
+8. Zaktualizuj PHP do wersji 8.1+ (jeśli to konieczne) – 1h
+9. Usuń nieużywane i przestarzałe wtyczki, wymień te bez wsparcia – 0.5h
+10. Wyłącz wp-cron.php i ustaw systemowy CRON – 0.5h
+11. Dodaj preload do fontów lub hostuj je lokalnie – 0.5h
+12. Dodaj atrybuty height/width do obrazów – 0.5h
+13. Aktywuj kompresję Brotli (jeśli możliwe) – 0.5h
+14. Rozważ migrację na hosting z HTTP/3 – 1-2h (analiza i migracja)
+15. Zoptymalizuj najcięższe zapytania SQL (wg Query Monitor) – 1-2h
+16. Dodaj opisy alt do wszystkich obrazów – 0.5-1h
+17. Rozważ wdrożenie Critical CSS – 1h
+18. Jeśli używasz WooCommerce – wdroż cache fragmentów dynamicznych – 1h
+19. Regularnie aktualizuj wtyczki, motywy i WordPressa – 0.25h (cyklicznie) 

@@ -1,0 +1,77 @@
+✅ Task: Audyt i optymalizacja WordPressa – https://kupujemym.pl/
+
+🎯 Cel:
+
+Wykonać pełny audyt techniczny i wydajnościowy strony WordPress oraz wdrożyć zalecenia optymalizacyjne, aby poprawić wyniki Core Web Vitals i PageSpeed Insights oraz obniżyć czas ładowania strony.
+
+⸻
+
+🔧 Etapy realizacji:
+
+1. Audyt – pomiary bazowe
+
+Wykonaj testy przy użyciu narzędzi:
+	•	PageSpeed Insights - https://pagespeed.web.dev/
+	•	GTmetrix - https://gtmetrix.com/
+	•	WebPageTest - https://www.webpagetest.org/
+	•	Chrome DevTools → zakładki Performance i Network
+
+📌 Zapisz metryki:
+	•	Core Web Vitals: LCP, CLS, INP
+	•	TTFB (Time To First Byte)
+	•	Fully Loaded Time
+	•	Ilość zapytań HTTP i rozmiar strony
+
+2. Audyt backendu WordPress
+
+Sprawdź:
+	•	Wersję PHP (zalecana 8.1+)
+	•	Ilość i jakość wtyczek (czy są aktywnie wspierane)
+	•	Konfigurację CRON (wp-cron.php)
+	•	Obecność obiektowego cache (Redis/Memcached)
+	•	Profiluj zapytania SQL (np. przez wtyczkę Query Monitor)
+
+3. Audyt frontendowy
+
+Zidentyfikuj:
+	•	Czy obrazy są zoptymalizowane i używają formatu WebP
+	•	Czy zasoby CSS/JS są minifikowane i odpowiednio ładowane (defer / async)
+	•	Czy występują zasoby blokujące renderowanie
+	•	Czy fonty są preloadowane lub hostowane lokalnie
+	•	Jakie są CLS (layout shifts) – np. przez ładowanie reklam, obrazów bez height
+
+4. Audyt infrastruktury
+
+Sprawdź:
+	•	Czy hosting wspiera HTTP/2 lub HTTP/3
+	•	Czy włączony jest CDN (np. Cloudflare, BunnyCDN)
+	•	Czy aktywna jest kompresja GZIP/Brotli
+	•	Czas odpowiedzi serwera (TTFB)
+
+⸻
+
+✅ Zadania optymalizacyjne (jeśli nie są wdrożone):
+	•	Włącz lub skonfiguruj CDN
+	•	Skonwertuj i zastąp obrazy na WebP
+	•	Minifikuj i łącz CSS/JS (np. Autoptimize, WP Rocket)
+	•	Użyj lazy loading dla obrazów (loading="lazy")
+	•	Włącz object cache (np. Redis Object Cache)
+	•	Przenieś JS do stopki lub oznacz defer/async
+	•	Zainstaluj wtyczkę cache’ującą (np. LiteSpeed Cache, WP Rocket)
+
+⸻
+
+📄 Raport końcowy
+
+Zbierz dane do raportu (do PDF lub markdown):
+	•	Screenshoty wyników z przed i po (PSI, GTmetrix)
+	•	Lista działań podjętych w ramach optymalizacji
+	•	Różnice w metrykach
+	•	Rekomendacje długoterminowe (np. migracja hostingu, eliminacja zbędnych wtyczek)
+
+⸻
+
+🧩 Bonus (jeśli potrzebne):
+	•	Zidentyfikuj problemy z SEO (np. brak alt dla obrazów, brak preloading fontów, błędy strukturalne w HTML)
+	•	Rozważ wdrożenie Critical CSS
+	•	Jeśli strona korzysta z WooCommerce – dodatkowa optymalizacja pod e-commerce (np. cache fragmentów dynamicznych)

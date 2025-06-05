@@ -1,0 +1,82 @@
+🔍 1. Wstępna analiza strony
+
+✅ Narzędzia:
+	•	Google PageSpeed Insights
+	•	GTmetrix
+	•	WebPageTest
+	•	DevTools (zakładka „Performance”)
+	•	Pingdom Tools
+
+⸻
+
+📊 2. Metryki do sprawdzenia (Core Web Vitals)
+
+✅ Główne wskaźniki:
+	•	LCP (Largest Contentful Paint) – < 2,5s
+	•	FID (First Input Delay) – < 100ms
+	•	CLS (Cumulative Layout Shift) – < 0,1
+	•	INP (Interaction to Next Paint) – < 200ms (nowy wskaźnik od 2024)
+
+⸻
+
+⚙️ 3. Audyt techniczny
+
+A. Serwer / Hosting
+	•	Czy serwer jest zoptymalizowany (czas TTFB)?
+	•	Włączone HTTP/2 lub HTTP/3?
+	•	Kompresja GZIP/Brotli?
+	•	CDN aktywny (np. Cloudflare)?
+
+B. WordPress – backend
+	•	Zainstalowane wtyczki (ilość, jakość, wpływ na wydajność)
+	•	Wersja PHP (zalecana 8.1+)
+	•	Liczba zapytań do bazy danych (profilowanie np. Query Monitor)
+	•	CRON (czy WP-Cron jest prawidłowo ustawiony?)
+
+C. Frontend – motyw i zasoby
+	•	Zoptymalizowane obrazy (formaty WebP, lazy loading?)
+	•	Minifikacja JS/CSS/HTML?
+	•	Redukcja render-blocking zasobów?
+	•	Ładowanie tylko potrzebnych skryptów (modułowe ładowanie)
+	•	Fonts (czy są ładowane lokalnie? preload?)
+
+⸻
+
+🚀 4. Lista zaleceń optymalizacyjnych
+
+🔧 Techniczne:
+	•	🔄 Zaktualizuj do najnowszej wersji PHP (8.1 lub 8.2)
+	•	💾 Włącz OPcache i obiektowy cache (np. Redis, Memcached)
+	•	🧹 Usuń niepotrzebne wtyczki i motywy
+	•	🛑 Ogranicz liczbę zapytań AJAX i REST (jeśli są w tle)
+
+🎨 Frontend:
+	•	🖼️ Używaj obrazów w formacie WebP
+	•	⏬ Użyj defer/async dla JS
+	•	✂️ Zredukuj CSS do używanych klas (np. PurgeCSS)
+	•	📦 Wdrożenie systemu cache (np. WP Rocket, LiteSpeed Cache)
+
+🌐 Sieć:
+	•	🌍 Włącz CDN (np. Cloudflare, BunnyCDN)
+	•	⚡ Aktywuj HTTP/3 (jeśli hosting obsługuje)
+	•	📁 Kompresja GZIP/Brotli
+
+⸻
+
+📈 5. Testy po optymalizacji
+
+Po wdrożeniu zmian:
+	•	Powtórz testy w Google PageSpeed / GTmetrix / WebPageTest
+	•	Porównaj: czas ładowania, LCP, CLS, INP
+	•	Porównaj TTFB i transfer danych (PageWeight)
+
+⸻
+
+📄 6. Dokumentacja audytu
+
+W finalnym raporcie powinny znaleźć się:
+	•	Podsumowanie stanu wyjściowego
+	•	Wyniki z narzędzi (screenshots, wyniki GTmetrix, PSI)
+	•	Lista znalezionych problemów
+	•	Lista działań optymalizacyjnych
+	•	Rezultaty po optymalizacji
