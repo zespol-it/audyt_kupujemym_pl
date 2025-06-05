@@ -1,0 +1,41 @@
+
+Jak sprawdzić responsywność mobilną?
+
+1. Chrome DevTools (narzędzia deweloperskie przeglądarki)
+   - Otwórz stronę w Google Chrome.
+   - Kliknij prawym przyciskiem myszy i wybierz „Zbadaj” (lub naciśnij F12).
+   - Wybierz ikonę „Przełącz urządzenie” (telefon/tablet, Ctrl+Shift+M lub Cmd+Shift+M).
+   - Wybierz urządzenie lub ustaw własną rozdzielczość.
+   - Sprawdź układ, czytelność, działanie menu i przycisków.
+
+2. Google Mobile-Friendly Test
+   - https://search.google.com/test/mobile-friendly
+   - Wklej adres strony, uruchom test.
+   - Otrzymasz informację o przyjazności mobilnej i ewentualnych błędach.
+
+3. PageSpeed Insights
+   - https://pagespeed.web.dev/
+   - Wklej adres strony, uruchom test.
+   - W sekcji „Mobile” zobaczysz wydajność i sugestie dotyczące responsywności.
+
+4. Ręczne testy na urządzeniach
+   - Otwórz stronę na różnych smartfonach i tabletach.
+   - Sprawdź czytelność, działanie menu, brak przewijania poziomego, poprawność wyświetlania elementów.
+
+5. Narzędzia online do podglądu responsywności
+   - https://www.responsinator.com/
+   - https://www.browserstack.com/responsive
+   - https://ami.responsivedesign.is/
+
+Na co zwrócić uwagę?
+- Czy tekst jest czytelny bez powiększania.
+- Czy przyciski i linki są łatwe do kliknięcia.
+- Czy menu i nawigacja działają poprawnie.
+- Czy nie ma poziomego przewijania.
+- Czy obrazy i elementy nie wychodzą poza ekran.
+- Czy formularze są łatwe do wypełnienia na telefonie.
+
+Podsumowanie:
+Najwygodniej zacząć od Chrome DevTools i Google Mobile-Friendly Test. Dla pewności warto przetestować stronę na kilku prawdziwych urządzeniach.
+
+Podsumowanie: Strona kupujemym.pl ma solidne podstawy, ale wdrożenie powyższych optymalizacji pozwoli znacząco poprawić szybkość ładowania, wyniki Core Web Vitals i ogólne doświadczenie użytkownika. Większość zmian można wdrożyć w ciągu 1-2 dni roboczych. 
